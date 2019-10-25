@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.personal.blog.mapper.BlogRolePermissionMapper">
+  <resultMap id="BaseResultMap" type="org.personal.blog.bean.BlogRolePermission">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="role_permission_id" jdbcType="INTEGER" property="rolePermissionId" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="permission_id" jdbcType="INTEGER" property="permissionId" />
+  </resultMap>
+
+  <!--根据rokeId查询所有不重复的权限路径-->
+  <select id="getPermissionUrlByRoleIds" resultType="java.util.ArrayList">
+    SELECT
+        p.permission_url
+    FROM
+        blog_permission p
+    WHERE
+        permission_id
+    exists
+        (SELECT DISTINCT
+            permission_id
+        FROM
+            blog_role_permission
+        WHERE
+            role_id
+        exists (
+          <foreach collection="array" index="index" item="roleId" separator=",">
+            #{roleId}
+          </foreach>
+        ))
+        and
+            p.permission_url is not null
+        and
+            p.permission_url !=''
+  </select>
+</mapper>

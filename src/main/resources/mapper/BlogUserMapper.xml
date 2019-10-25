@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.personal.blog.mapper.BlogUserMapper">
+  <resultMap id="BaseResultMap" type="org.personal.blog.bean.BlogUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <id column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updata_time" jdbcType="TIMESTAMP" property="updataTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+
+</mapper>

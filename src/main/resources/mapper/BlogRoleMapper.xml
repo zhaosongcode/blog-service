@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.personal.blog.mapper.BlogRoleMapper">
+  <resultMap id="BaseResultMap" type="org.personal.blog.bean.BlogRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+  </resultMap>
+  <!--根据角色id获取角色名称集合-->
+  <select id="getRoleNamesByRoleId" resultType="java.util.ArrayList">
+    select
+        roleName
+    from
+        blog_role
+    where
+        role_id exists (
+    <foreach collection="list" index="index" item="roleId" separator=",">
+        #{roleId}
+    </foreach>
+        )
+  </select>
+</mapper>
