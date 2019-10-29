@@ -1,10 +1,7 @@
 package org.personal.blog.mapper;
 
-import org.personal.blog.bean.BlogRole;
-import org.personal.blog.config.mapper.MyMapper;
+import org.personal.blog.pojo.entity.BlogRole;
+import tk.mybatis.mapper.common.BaseMapper;
 
-import java.util.List;
-
-public interface BlogRoleMapper extends MyMapper<BlogRole> {
-    List<String> getRoleNamesByRoleId(String[] roleIds1);
+public interface BlogRoleMapper extends BaseMapper<BlogRole> {
 }

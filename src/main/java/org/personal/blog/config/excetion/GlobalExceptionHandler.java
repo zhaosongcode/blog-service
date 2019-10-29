@@ -1,7 +1,7 @@
 package org.personal.blog.config.excetion;
 
-import org.personal.blog.util.result.Result;
-import org.personal.blog.util.result.ResultUtil;
+import org.personal.blog.pojo.result.Result;
+import org.personal.blog.util.ResultUtil;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

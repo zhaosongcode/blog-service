@@ -156,6 +156,18 @@
             <version>3.5.0</version>
         </dependency>
         <!--公众号(包括订阅号和服务号) end-->
+        <!--二维码支持 start-->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!--二维码支持 send-->
     </dependencies>
 
     <build>

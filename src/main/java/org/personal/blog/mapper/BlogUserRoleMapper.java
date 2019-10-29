@@ -1,7 +1,7 @@
 package org.personal.blog.mapper;
 
-import org.personal.blog.bean.BlogUserRole;
-import org.personal.blog.config.mapper.MyMapper;
+import org.personal.blog.pojo.entity.BlogUserRole;
+import tk.mybatis.mapper.common.BaseMapper;
 
-public interface BlogUserRoleMapper extends MyMapper<BlogUserRole> {
+public interface BlogUserRoleMapper extends BaseMapper<BlogUserRole> {
 }
