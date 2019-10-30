@@ -9,6 +9,7 @@
     <result column="role_name" property="roleName" jdbcType="VARCHAR" />
   </resultMap>
 
+  <!--批量插入-->
   <insert id="insertBatch" parameterType="java.util.ArrayList">
     insert into
     blog_role(role_name)

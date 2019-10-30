@@ -55,12 +55,31 @@ public class NumberTools {
         return encyPassword;
     }
 
+    /**
+     * @Param []
+     * @Return java.lang.String
+     * @Author zs
+     * @Date 2019/10/30 10:26
+     * 功能描述：获取四位随机数
+     */
     public static String get4IntNum(){
         String num = "";
         Random ra =new Random();
         for (int i=0;i<4;i++) {
             num += ra.nextInt(10)+1;
         }
+        return num;
+    }
+
+    /**
+     * @Param []
+     * @Return java.lang.Object
+     * @Author zs
+     * @Date 2019/10/30 10:27
+     * 功能描述：获取任意范围内的整数随机数
+     */
+    public static int getRanNum(int min, int max){
+        int num = (int)(Math.random()*(max-min+1)+max);
         return num;
     }
 }

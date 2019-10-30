@@ -1,13 +1,10 @@
-package org.personal.blog.config.thread;
+package org.personal.blog.pojo.runable;
 
 import org.personal.blog.mapper.BlogRoleMapper;
-import org.personal.blog.mapper.BlogUserMapper;
 import org.personal.blog.pojo.entity.BlogRole;
-import org.personal.blog.pojo.entity.BlogUser;
 import org.personal.blog.util.NumberTools;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

@@ -12,4 +12,20 @@
     <result column="permission_icon" property="permissionIcon" jdbcType="VARCHAR" />
     <result column="permission_note" property="permissionNote" jdbcType="VARCHAR" />
   </resultMap>
+
+  <!--批量插入-->
+  <insert id="insertBatch" parameterType="java.util.ArrayList">
+    insert into
+    blog_permission(parent_id,permission_name,permission_url,permission_icon,permission_note)
+    values <foreach collection="list" item="item" index="index" separator=",">
+    (
+    #{item.parentId},
+    #{item.permissionName},
+    #{item.permissionUrl},
+    #{item.permissionIcon},
+    #{item.permissionNote}
+    )
+  </foreach>
+
+  </insert>
 </mapper>

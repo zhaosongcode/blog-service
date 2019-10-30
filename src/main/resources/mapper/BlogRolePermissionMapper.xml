@@ -9,4 +9,17 @@
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
     <result column="permission_id" property="permissionId" jdbcType="INTEGER" />
   </resultMap>
+
+  <!--批量插入-->
+  <insert id="insertBatch" parameterType="java.util.ArrayList">
+    insert into
+    blog_role_permission(role_id,permission_id)
+    values <foreach collection="list" item="item" index="index" separator=",">
+    (
+    #{item.roleId},
+    #{item.permissionId}
+    )
+  </foreach>
+
+  </insert>
 </mapper>

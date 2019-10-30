@@ -17,6 +17,7 @@
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
   </resultMap>
 
+    <!--批量插入-->
   <insert id="insertBatch" parameterType="java.util.ArrayList">
         insert into
             blog_user(user_name,phone,email,create_time)

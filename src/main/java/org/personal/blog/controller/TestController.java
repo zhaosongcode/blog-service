@@ -1,8 +1,9 @@
 package org.personal.blog.controller;
 
-import org.personal.blog.config.thread.RunableRole;
-import org.personal.blog.mapper.BlogRoleMapper;
-import org.personal.blog.mapper.BlogUserMapper;
+import org.personal.blog.mapper.*;
+import org.personal.blog.pojo.runable.RunablePermission;
+import org.personal.blog.pojo.runable.RunableRolePermission;
+import org.personal.blog.pojo.runable.RunableUserRole;
 import org.personal.blog.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,23 +23,28 @@ public class TestController {
     BlogUserMapper userMapper;
     @Autowired
     BlogRoleMapper roleMapper;
+    @Autowired
+    BlogPermissionMapper permissionMapper;
+    @Autowired
+    BlogUserRoleMapper userRoleMapper;
+    @Autowired
+    BlogRolePermissionMapper rolePermissionMapper;
 
     @RequestMapping("/test4")
     public Object test4()throws Exception{
         long startTime=System.currentTimeMillis();   //获取开始时间
-        int count = 0;
+        int count = 1;
         LinkedBlockingQueue<Runnable> workingQueue = new LinkedBlockingQueue<Runnable>();
         RejectedExecutionHandler rejectedExecutionHandler = new ThreadPoolExecutor.DiscardPolicy();
         //获取线程池
         ExecutorService pool = new ThreadPoolExecutor(10,10,0, TimeUnit.SECONDS,workingQueue,rejectedExecutionHandler);
-        for(int i = 0;i<2000;i++){
-            RunableRole runable = new RunableRole(roleMapper,count);
+        for(int i = 0;i<30000;i++){
+            RunableRolePermission runable = new RunableRolePermission(rolePermissionMapper,count);
             pool.execute(runable);
-            count += 1000;
+            count += 100;
         }
         pool.shutdown();
         pool.awaitTermination(1,TimeUnit.HOURS);//等待所有线程执行完成
-
         //插入500万数据
         /*for(int i = 0;i<1000;i++){
             List<BlogUser> users = new ArrayList<>();
@@ -56,8 +62,10 @@ public class TestController {
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
         Map<String, Object> resMap = new HashMap<>();
+        long ti = endTime-startTime;
+        float cous = (float) (ti/1000.0);
         resMap.put("count",count);
-        resMap.put("time",endTime-startTime);
+        resMap.put("time",cous+"秒");
         return ResultUtil.success(resMap);
     }
 
