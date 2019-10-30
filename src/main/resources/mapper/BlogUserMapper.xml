@@ -16,4 +16,18 @@
     <result column="real_name" property="realName" jdbcType="VARCHAR" />
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
   </resultMap>
+
+  <insert id="insertBatch" parameterType="java.util.ArrayList">
+        insert into
+            blog_user(user_name,phone,email,create_time)
+        values <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.userName},
+            #{item.phone},
+            #{item.email},
+            #{item.createTime}
+            )
+          </foreach>
+
+  </insert>
 </mapper>

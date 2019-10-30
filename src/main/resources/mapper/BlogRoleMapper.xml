@@ -8,4 +8,15 @@
     <id column="role_id" property="roleId" jdbcType="INTEGER" />
     <result column="role_name" property="roleName" jdbcType="VARCHAR" />
   </resultMap>
+
+  <insert id="insertBatch" parameterType="java.util.ArrayList">
+    insert into
+    blog_role(role_name)
+    values <foreach collection="list" item="item" index="index" separator=",">
+    (
+    #{item.roleName}
+    )
+  </foreach>
+
+  </insert>
 </mapper>
