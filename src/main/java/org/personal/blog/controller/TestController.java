@@ -1,9 +1,9 @@
 package org.personal.blog.controller;
 
 import org.personal.blog.mapper.*;
-import org.personal.blog.pojo.runable.RunablePermission;
+import org.personal.blog.pojo.entity.BlogPermission;
+import org.personal.blog.pojo.entity.BlogRolePermission;
 import org.personal.blog.pojo.runable.RunableRolePermission;
-import org.personal.blog.pojo.runable.RunableUserRole;
 import org.personal.blog.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,7 +71,28 @@ public class TestController {
 
     @RequestMapping("/test5")
     public Object test5(){
-
-        return ResultUtil.success();
+        long startTime=System.currentTimeMillis();   //获取开始时间
+        int userId = 1456897;
+        BlogRolePermission blogRolePermission = rolePermissionMapper.selectByPrimaryKey(userId);
+        Integer permissionId = blogRolePermission.getPermissionId();
+        BlogPermission blogPermission = permissionMapper.selectByPrimaryKey(permissionId);
+        long endTime=System.currentTimeMillis(); //获取结束时间
+        long ti = endTime-startTime;
+        System.out.println("程序运行时间： "+ti+"ms");
+        float cous = (float) (ti/1000.0);
+        return ResultUtil.success(200,cous+"秒",blogPermission);
+    }
+    @RequestMapping("/test6")
+    public Object test6(){
+        long startTime=System.currentTimeMillis();   //获取开始时间
+        int userId = 1456897;
+        BlogRolePermission blogRolePermission = rolePermissionMapper.selectByPrimaryKey(userId);
+        Integer permissionId = blogRolePermission.getPermissionId();
+        BlogPermission blogPermission = permissionMapper.selectByPrimaryKey(permissionId);
+        long endTime=System.currentTimeMillis(); //获取结束时间
+        long ti = endTime-startTime;
+        System.out.println("程序运行时间： "+ti+"ms");
+        float cous = (float) (ti/1000.0);
+        return ResultUtil.success(200,cous+"秒",blogPermission);
     }
 }
