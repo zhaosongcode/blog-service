@@ -2,14 +2,14 @@ package org.personal.blog.pojo.entity;
 
 import javax.persistence.*;
 
-@Table(name = "blog_role")
-public class BlogRole {
+@Table(name = "sys_role")
+public class SysRole {
     /**
-     * 角色id
+     * 主键id
      */
     @Id
-    @Column(name = "role_id")
-    private Integer roleId;
+    @Column(name = "pk_id")
+    private Integer pkId;
 
     /**
      * 角色名称
@@ -18,21 +18,21 @@ public class BlogRole {
     private String roleName;
 
     /**
-     * 获取角色id
+     * 获取主键id
      *
-     * @return role_id - 角色id
+     * @return pk_id - 主键id
      */
-    public Integer getRoleId() {
-        return roleId;
+    public Integer getPkId() {
+        return pkId;
     }
 
     /**
-     * 设置角色id
+     * 设置主键id
      *
-     * @param roleId 角色id
+     * @param pkId 主键id
      */
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setPkId(Integer pkId) {
+        this.pkId = pkId;
     }
 
     /**

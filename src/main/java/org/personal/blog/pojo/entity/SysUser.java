@@ -3,27 +3,26 @@ package org.personal.blog.pojo.entity;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "blog_user")
-public class BlogUser {
+@Table(name = "sys_user")
+public class SysUser {
     /**
-     * 用户id
+     * 主键id
      */
     @Id
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "pk_id")
+    private Integer pkId;
 
     /**
-     * 用户名称
+     * 账号
      */
-    @Id
-    @Column(name = "user_name")
-    private String userName;
+    @Column(name = "account_number")
+    private String accountNumber;
 
     /**
-     * 用户密码
+     * 密码
      */
-    @Column(name = "user_password")
-    private String userPassword;
+    @Column(name = "account_password")
+    private String accountPassword;
 
     /**
      * 用户手机号
@@ -54,68 +53,68 @@ public class BlogUser {
     private Boolean isDelete;
 
     /**
-     * 真实姓名
+     * 用户姓名
      */
-    @Column(name = "real_name")
-    private String realName;
+    @Column(name = "user_name")
+    private String userName;
 
     /**
      * 用户描述
      */
-    private String remarks;
+    private String remark;
 
     /**
-     * 获取用户id
+     * 获取主键id
      *
-     * @return user_id - 用户id
+     * @return pk_id - 主键id
      */
-    public Integer getUserId() {
-        return userId;
+    public Integer getPkId() {
+        return pkId;
     }
 
     /**
-     * 设置用户id
+     * 设置主键id
      *
-     * @param userId 用户id
+     * @param pkId 主键id
      */
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setPkId(Integer pkId) {
+        this.pkId = pkId;
     }
 
     /**
-     * 获取用户名称
+     * 获取账号
      *
-     * @return user_name - 用户名称
+     * @return account_number - 账号
      */
-    public String getUserName() {
-        return userName;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
     /**
-     * 设置用户名称
+     * 设置账号
      *
-     * @param userName 用户名称
+     * @param accountNumber 账号
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     /**
-     * 获取用户密码
+     * 获取密码
      *
-     * @return user_password - 用户密码
+     * @return account_password - 密码
      */
-    public String getUserPassword() {
-        return userPassword;
+    public String getAccountPassword() {
+        return accountPassword;
     }
 
     /**
-     * 设置用户密码
+     * 设置密码
      *
-     * @param userPassword 用户密码
+     * @param accountPassword 密码
      */
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setAccountPassword(String accountPassword) {
+        this.accountPassword = accountPassword;
     }
 
     /**
@@ -209,38 +208,38 @@ public class BlogUser {
     }
 
     /**
-     * 获取真实姓名
+     * 获取用户姓名
      *
-     * @return real_name - 真实姓名
+     * @return user_name - 用户姓名
      */
-    public String getRealName() {
-        return realName;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * 设置真实姓名
+     * 设置用户姓名
      *
-     * @param realName 真实姓名
+     * @param userName 用户姓名
      */
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
      * 获取用户描述
      *
-     * @return remarks - 用户描述
+     * @return remark - 用户描述
      */
-    public String getRemarks() {
-        return remarks;
+    public String getRemark() {
+        return remark;
     }
 
     /**
      * 设置用户描述
      *
-     * @param remarks 用户描述
+     * @param remark 用户描述
      */
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

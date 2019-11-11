@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.personal.blog.mapper.SysDictOptionMapper" >
+  <resultMap id="BaseResultMap" type="org.personal.blog.pojo.entity.SysDictOption" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="pk_id" property="pkId" jdbcType="INTEGER" />
+    <result column="dict_id" property="dictId" jdbcType="INTEGER" />
+    <result column="dict_value" property="dictValue" jdbcType="INTEGER" />
+    <result column="dict_name" property="dictName" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="note" property="note" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.personal.blog.mapper.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="org.personal.blog.pojo.entity.SysUser" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="pk_id" property="pkId" jdbcType="INTEGER" />
+    <result column="account_number" property="accountNumber" jdbcType="VARCHAR" />
+    <result column="account_password" property="accountPassword" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP" />
+    <result column="is_delete" property="isDelete" jdbcType="BIT" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>
